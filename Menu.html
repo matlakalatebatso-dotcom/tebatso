@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu - Thaty's Hardware store</title>
+    <link rel="stylesheet" href="STYLE.css">
+</head>
+<body>
+   
+    <header>
+        <div>
+            <h1>Thaty's Hardware store</h1>
+        </div>
+        <nav>
+            <div>
+                <a href="login.html">Login</a>
+                <a href="home.html">Home</a>
+                <a href="menu.html">Menu</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <div class="menu-header">
+            <h2>MENU</h2>
+            <h3>BUIDING MATERIALS</h3>
+        </div>
+        
+       
+        <div class="order-button">
+            <button onclick="calculateTotal()">Order Now</button>
+        </div>
+        
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="c:\Users\thoriso\Ma first web pge\9911120429088\ISAT CP\pictures\OIP.jpg" alt="building Image">
+                <div class="item-details">
+                    <h4>Building Material</h4>
+                    <input type="checkbox" value="85" class="menu-item-checkbox"><label>Concrete R85</label><br>
+                    <input type="checkbox" value="34.99" class="menu-item-checkbox"><label>Wood R34.99</label><br>
+                    <input type="checkbox" value="80" class="menu-item-checkbox"><label>Steel R80</label>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="c:\Users\thoriso\Ma first web pge\9911120429088\ISAT CP\pictures\cement.webp" alt="clement Image">
+                <div class="item-details">
+                 <h4>cement</h4>
+                    <input type="checkbox" value="120.00" class="menu-item-checkbox"><label>PPC cement R120 </label><br>
+                    <input type="checkbox" value="140.99" class="menu-item-checkbox"><label>OPC cement R140.99</label><br>
+                    <input type="checkbox" value="100" class="menu-item-checkbox"><label>Flyash cement R100</label>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="c:\Users\thoriso\Ma first web pge\9911120429088\ISAT CP\pictures\bricks-normal.jpeg" alt="bricks Image">
+                <div class="item-details">
+                         <h4>bricks</h4>
+                    <input type="checkbox" value="8" class="menu-item-checkbox"><label>Red bricks R8</label><br>
+                    <input type="checkbox" value="6.50" class="menu-item-checkbox"><label>Clay bricks R6.50</label>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+        <div id="total-price" style="margin-top: 20px; font-size: 20px; color: yellow;">
+            
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>© 2025 Thaty's Hardware store. All Rights Reserved.</p>
+    </footer>
+
+     <script>
+        function calculateTotal() {
+            const checkboxes = document.querySelectorAll('.menu-item-checkbox');
+            let total = 0;
+
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    total += parseFloat(checkbox.value);
+                }
+            });
+            if (total > 0) {
+                document.getElementById('total-price').innerText = 'Total Price: R' + total.toFixed(2);
+            } else {
+                alert('Please select at least one item to order.');
+            }
+        }
+    </script>
+</body>
+</html>
+
